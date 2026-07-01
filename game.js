@@ -30,6 +30,30 @@ const el = (tag, cls, html) => {
 const rand = (arr) => arr[Math.floor(Math.random() * arr.length)];
 const unitName = (u) => u.players.join(" / ");
 
+// Initials shown on the jersey: singles -> player initials; doubles -> each surname initial.
+function initialsOf(u) {
+  if (u.players.length === 1) {
+    const p = u.players[0].split(/\s+/);
+    return (p[0][0] + (p[1] ? p[1][0] : "")).toUpperCase();
+  }
+  return u.players
+    .map((name) => { const parts = name.split(/\s+/); return parts[parts.length - 1][0]; })
+    .join("")
+    .toUpperCase();
+}
+
+// A CSS "kit" avatar coloured in the nation's team colours (stands in for a photo).
+function jerseyHTML(u) {
+  const k = NATIONS[u.nation].kit;
+  return `<span class="jersey" style="--kit1:${k.primary};--kit2:${k.secondary}">
+            <span class="jersey-flag">${NATIONS[u.nation].flag}</span>
+            <span class="jersey-num">${initialsOf(u)}</span>
+          </span>`;
+}
+function emptyJerseyHTML() {
+  return `<span class="jersey jersey--empty"><span class="jersey-num">?</span></span>`;
+}
+
 function showScreen(id) {
   document.querySelectorAll(".screen").forEach((s) => s.classList.remove("active"));
   $("#" + id).classList.add("active");
@@ -82,6 +106,7 @@ function renderSlots() {
       const n = NATIONS[u.nation];
       node.innerHTML = `
         <div class="disc-badge">${slot.disc}</div>
+        ${jerseyHTML(u)}
         <div class="slot-body">
           <div class="slot-name">${unitName(u)}</div>
           <div class="slot-sub">${n.flag} ${n.name} · ${u.era}</div>
@@ -90,6 +115,7 @@ function renderSlots() {
     } else {
       node.innerHTML = `
         <div class="disc-badge">${slot.disc}</div>
+        ${emptyJerseyHTML()}
         <div class="slot-body">
           <span class="empty-txt">${DISCIPLINES[slot.disc].label} — empty</span>
         </div>
@@ -185,6 +211,7 @@ function renderPicks(picks) {
       const item = el("div", "pick-item");
       item.innerHTML = `
         <div class="pi-disc">${u.disc}</div>
+        ${jerseyHTML(u)}
         <div class="pi-body">
           <div class="pi-name">${unitName(u)}</div>
           <div class="pi-sub">${DISCIPLINES[u.disc].label} · ${u.era}</div>
@@ -290,6 +317,7 @@ function showResult(wins, losses, perDisc) {
     const row = el("div", "bd-row");
     row.innerHTML = `
       <span class="bd-disc">${pd.disc}</span>
+      ${jerseyHTML(pd.unit)}
       <span class="bd-name">${unitName(pd.unit)} <small style="color:var(--muted)">${n.flag}</small></span>
       <span class="bd-win ${winSide ? "w" : "l"}">${rate}% won</span>`;
     bd.appendChild(row);

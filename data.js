@@ -45,17 +45,17 @@ const FORMATS = {
 };
 
 const NATIONS = {
-  CHN: { code: "CHN", name: "China",          flag: "🇨🇳" },
-  INA: { code: "INA", name: "Indonesia",      flag: "🇮🇩" },
-  MAS: { code: "MAS", name: "Malaysia",       flag: "🇲🇾" },
-  DEN: { code: "DEN", name: "Denmark",        flag: "🇩🇰" },
-  JPN: { code: "JPN", name: "Japan",          flag: "🇯🇵" },
-  KOR: { code: "KOR", name: "South Korea",    flag: "🇰🇷" },
-  IND: { code: "IND", name: "India",          flag: "🇮🇳" },
-  TPE: { code: "TPE", name: "Chinese Taipei", flag: "🇹🇼" },
-  THA: { code: "THA", name: "Thailand",       flag: "🇹🇭" },
-  ESP: { code: "ESP", name: "Spain",          flag: "🇪🇸" },
-  ENG: { code: "ENG", name: "England",        flag: "🏴" },
+  CHN: { code: "CHN", name: "China",          flag: "🇨🇳", kit: { primary: "#e60012", secondary: "#ffde00" } },
+  INA: { code: "INA", name: "Indonesia",      flag: "🇮🇩", kit: { primary: "#e70011", secondary: "#ffffff" } },
+  MAS: { code: "MAS", name: "Malaysia",       flag: "🇲🇾", kit: { primary: "#ffcc00", secondary: "#cc0001" } },
+  DEN: { code: "DEN", name: "Denmark",        flag: "🇩🇰", kit: { primary: "#c60c30", secondary: "#ffffff" } },
+  JPN: { code: "JPN", name: "Japan",          flag: "🇯🇵", kit: { primary: "#ffffff", secondary: "#bc002d" } },
+  KOR: { code: "KOR", name: "South Korea",    flag: "🇰🇷", kit: { primary: "#0047a0", secondary: "#cd2e3a" } },
+  IND: { code: "IND", name: "India",          flag: "🇮🇳", kit: { primary: "#ff9933", secondary: "#138808" } },
+  TPE: { code: "TPE", name: "Chinese Taipei", flag: "🇹🇼", kit: { primary: "#003c7d", secondary: "#d30731" } },
+  THA: { code: "THA", name: "Thailand",       flag: "🇹🇭", kit: { primary: "#2d2a4a", secondary: "#a51931" } },
+  ESP: { code: "ESP", name: "Spain",          flag: "🇪🇸", kit: { primary: "#aa151b", secondary: "#f1bf00" } },
+  ENG: { code: "ENG", name: "England",        flag: "🏴", kit: { primary: "#ce1124", secondary: "#ffffff" } },
 };
 
 // Helper to compute an overall from the five attributes with a
@@ -192,15 +192,47 @@ const _UNITS = [
   { disc: "XD", nation: "FRA", era: 2023, players: ["Thom Gicquel", "Delphine Delrue"],     s: { SMH: 85, SPD: 86, DEF: 86, NET: 86, STA: 85 } },
   { disc: "XD", nation: "CHN", era: 2023, players: ["Feng Yanzhe", "Huang Dongping"],       s: { SMH: 89, SPD: 88, DEF: 88, NET: 89, STA: 87 } },
   { disc: "XD", nation: "HKG", era: 2021, players: ["Tang Chun Man", "Tse Ying Suet"],      s: { SMH: 85, SPD: 85, DEF: 86, NET: 86, STA: 85 } },
+
+  // ================= HISTORIC ROSTER (pre-2010) =================
+
+  // ---------------- MEN'S DOUBLES (historic) ----------------
+  { disc: "MD", nation: "INA", era: 1996, players: ["Ricky Subagja", "Rexy Mainaky"],          s: { SMH: 91, SPD: 88, DEF: 89, NET: 88, STA: 86 } },
+  { disc: "MD", nation: "INA", era: 2000, players: ["Tony Gunawan", "Candra Wijaya"],          s: { SMH: 92, SPD: 87, DEF: 88, NET: 88, STA: 85 } },
+  { disc: "MD", nation: "KOR", era: 2004, players: ["Ha Tae-kwon", "Kim Dong-moon"],           s: { SMH: 90, SPD: 88, DEF: 89, NET: 88, STA: 86 } },
+  { disc: "MD", nation: "KOR", era: 1992, players: ["Park Joo-bong", "Kim Moon-soo"],          s: { SMH: 90, SPD: 86, DEF: 88, NET: 89, STA: 85 } },
+  { disc: "MD", nation: "MAS", era: 1992, players: ["Razif Sidek", "Jalani Sidek"],            s: { SMH: 88, SPD: 85, DEF: 87, NET: 86, STA: 85 } },
+  { disc: "MD", nation: "MAS", era: 1996, players: ["Cheah Soon Kit", "Yap Kim Hock"],         s: { SMH: 89, SPD: 86, DEF: 85, NET: 85, STA: 84 } },
+  { disc: "MD", nation: "KOR", era: 2003, players: ["Lee Dong-soo", "Yoo Yong-sung"],          s: { SMH: 89, SPD: 86, DEF: 87, NET: 86, STA: 84 } },
+  { disc: "MD", nation: "INA", era: 1997, players: ["Candra Wijaya", "Sigit Budiarto"],        s: { SMH: 90, SPD: 85, DEF: 86, NET: 87, STA: 84 } },
+  { disc: "MD", nation: "DEN", era: 2004, players: ["Jens Eriksen", "Martin Lundgaard Hansen"], s: { SMH: 88, SPD: 84, DEF: 88, NET: 85, STA: 84 } },
+  { disc: "MD", nation: "USA", era: 2005, players: ["Howard Bach", "Tony Gunawan"],            s: { SMH: 89, SPD: 85, DEF: 86, NET: 86, STA: 84 } },
+
+  // ---------------- WOMEN'S DOUBLES (historic) ----------------
+  { disc: "WD", nation: "CHN", era: 1997, players: ["Ge Fei", "Gu Jun"],                       s: { SMH: 89, SPD: 87, DEF: 90, NET: 90, STA: 87 } },
+  { disc: "WD", nation: "KOR", era: 1999, players: ["Ra Kyung-min", "Chung Jae-hee"],          s: { SMH: 86, SPD: 86, DEF: 88, NET: 86, STA: 86 } },
+  { disc: "WD", nation: "KOR", era: 1992, players: ["Chung So-young", "Hwang Hye-young"],       s: { SMH: 87, SPD: 85, DEF: 88, NET: 86, STA: 85 } },
+  { disc: "WD", nation: "KOR", era: 2008, players: ["Lee Kyung-won", "Lee Hyo-jung"],          s: { SMH: 87, SPD: 86, DEF: 87, NET: 86, STA: 85 } },
+  { disc: "WD", nation: "CHN", era: 1992, players: ["Guan Weizhen", "Nong Qunhua"],            s: { SMH: 87, SPD: 84, DEF: 87, NET: 85, STA: 84 } },
+
+  // ---------------- MIXED DOUBLES (historic) ----------------
+  { disc: "XD", nation: "KOR", era: 2000, players: ["Kim Dong-moon", "Ra Kyung-min"],          s: { SMH: 88, SPD: 87, DEF: 89, NET: 90, STA: 86 } },
+  { disc: "XD", nation: "ENG", era: 2004, players: ["Nathan Robertson", "Gail Emms"],          s: { SMH: 86, SPD: 85, DEF: 87, NET: 86, STA: 85 } },
+  { disc: "XD", nation: "INA", era: 2000, players: ["Tri Kusharjanto", "Minarti Timur"],       s: { SMH: 86, SPD: 85, DEF: 86, NET: 87, STA: 84 } },
+
+  // ---------------- SINGLES (historic legends) ----------------
+  { disc: "MS", nation: "CHN", era: 1988, players: ["Yang Yang"],          s: { SMH: 89, SPD: 87, DEF: 85, NET: 86, STA: 88 } },
+  { disc: "MS", nation: "INA", era: 1983, players: ["Icuk Sugiarto"],      s: { SMH: 88, SPD: 85, DEF: 84, NET: 85, STA: 86 } },
+  { disc: "WS", nation: "CHN", era: 1986, players: ["Li Lingwei"],         s: { SMH: 87, SPD: 86, DEF: 86, NET: 87, STA: 86 } },
+  { disc: "WS", nation: "CHN", era: 1985, players: ["Han Aiping"],         s: { SMH: 89, SPD: 85, DEF: 84, NET: 85, STA: 85 } },
 ];
 
 // Add nations that only appear in the roster (not in the primary map above).
-NATIONS.SGP = { code: "SGP", name: "Singapore",      flag: "🇸🇬" };
-NATIONS.HKG = { code: "HKG", name: "Hong Kong",      flag: "🇭🇰" };
-NATIONS.USA = { code: "USA", name: "United States",  flag: "🇺🇸" };
-NATIONS.CAN = { code: "CAN", name: "Canada",         flag: "🇨🇦" };
-NATIONS.SCO = { code: "SCO", name: "Scotland",       flag: "🏴" };
-NATIONS.FRA = { code: "FRA", name: "France",         flag: "🇫🇷" };
+NATIONS.SGP = { code: "SGP", name: "Singapore",      flag: "🇸🇬", kit: { primary: "#ed2939", secondary: "#ffffff" } };
+NATIONS.HKG = { code: "HKG", name: "Hong Kong",      flag: "🇭🇰", kit: { primary: "#de2910", secondary: "#ffffff" } };
+NATIONS.USA = { code: "USA", name: "United States",  flag: "🇺🇸", kit: { primary: "#3c3b6e", secondary: "#b22234" } };
+NATIONS.CAN = { code: "CAN", name: "Canada",         flag: "🇨🇦", kit: { primary: "#ff0000", secondary: "#ffffff" } };
+NATIONS.SCO = { code: "SCO", name: "Scotland",       flag: "🏴", kit: { primary: "#005eb8", secondary: "#ffffff" } };
+NATIONS.FRA = { code: "FRA", name: "France",         flag: "🇫🇷", kit: { primary: "#0055a4", secondary: "#ef4135" } };
 
 // Finalise the roster: assign ids and computed overalls.
 const UNITS = _UNITS.map((u, i) => ({
