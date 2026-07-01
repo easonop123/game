@@ -121,10 +121,86 @@ const _UNITS = [
   { disc: "XD", nation: "JPN", era: 2022, players: ["Yuta Watanabe", "Arisa Higashino"],  s: { SMH: 87, SPD: 90, DEF: 89, NET: 90, STA: 88 } },
   { disc: "XD", nation: "ENG", era: 2011, players: ["Chris Adcock", "Gabby Adcock"],      s: { SMH: 84, SPD: 84, DEF: 86, NET: 85, STA: 83 } },
   { disc: "XD", nation: "KOR", era: 2023, players: ["Seo Seung-jae", "Chae Yu-jung"],     s: { SMH: 89, SPD: 88, DEF: 87, NET: 88, STA: 86 } },
+
+  // ================= EXPANSION ROSTER =================
+
+  // ---------------- MEN'S SINGLES (more) ----------------
+  { disc: "MS", nation: "CHN", era: 2018, players: ["Shi Yuqi"],           s: { SMH: 90, SPD: 88, DEF: 86, NET: 82, STA: 88 } },
+  { disc: "MS", nation: "TPE", era: 2019, players: ["Chou Tien-chen"],     s: { SMH: 86, SPD: 84, DEF: 89, NET: 85, STA: 90 } },
+  { disc: "MS", nation: "INA", era: 2018, players: ["Jonatan Christie"],   s: { SMH: 88, SPD: 88, DEF: 83, NET: 81, STA: 84 } },
+  { disc: "MS", nation: "DEN", era: 2019, players: ["Anders Antonsen"],    s: { SMH: 89, SPD: 86, DEF: 87, NET: 83, STA: 87 } },
+  { disc: "MS", nation: "IND", era: 2022, players: ["Lakshya Sen"],        s: { SMH: 85, SPD: 88, DEF: 84, NET: 82, STA: 85 } },
+  { disc: "MS", nation: "IND", era: 2017, players: ["Kidambi Srikanth"],   s: { SMH: 90, SPD: 87, DEF: 82, NET: 80, STA: 83 } },
+  { disc: "MS", nation: "CHN", era: 2010, players: ["Chen Jin"],           s: { SMH: 88, SPD: 84, DEF: 86, NET: 82, STA: 85 } },
+  { disc: "MS", nation: "CHN", era: 2006, players: ["Bao Chunlai"],        s: { SMH: 91, SPD: 85, DEF: 83, NET: 84, STA: 82 } },
+  { disc: "MS", nation: "INA", era: 1974, players: ["Rudy Hartono"],       s: { SMH: 88, SPD: 86, DEF: 84, NET: 88, STA: 85 } },
+  { disc: "MS", nation: "DEN", era: 1985, players: ["Morten Frost"],       s: { SMH: 86, SPD: 87, DEF: 85, NET: 88, STA: 86 } },
+  { disc: "MS", nation: "IND", era: 1980, players: ["Prakash Padukone"],   s: { SMH: 85, SPD: 86, DEF: 86, NET: 89, STA: 84 } },
+  { disc: "MS", nation: "KOR", era: 2017, players: ["Son Wan-ho"],         s: { SMH: 84, SPD: 86, DEF: 90, NET: 83, STA: 88 } },
+  { disc: "MS", nation: "KOR", era: 2008, players: ["Lee Hyun-il"],        s: { SMH: 83, SPD: 85, DEF: 88, NET: 84, STA: 90 } },
+  { disc: "MS", nation: "INA", era: 2014, players: ["Tommy Sugiarto"],     s: { SMH: 85, SPD: 84, DEF: 83, NET: 82, STA: 83 } },
+  { disc: "MS", nation: "HKG", era: 2019, players: ["Ng Ka Long Angus"],   s: { SMH: 85, SPD: 85, DEF: 83, NET: 82, STA: 83 } },
+
+  // ---------------- WOMEN'S SINGLES (more) ----------------
+  { disc: "WS", nation: "CHN", era: 2021, players: ["Chen Yufei"],         s: { SMH: 87, SPD: 89, DEF: 90, NET: 84, STA: 89 } },
+  { disc: "WS", nation: "CHN", era: 2023, players: ["He Bingjiao"],        s: { SMH: 85, SPD: 88, DEF: 88, NET: 86, STA: 86 } },
+  { disc: "WS", nation: "CHN", era: 2006, players: ["Zhang Ning"],         s: { SMH: 88, SPD: 85, DEF: 89, NET: 83, STA: 88 } },
+  { disc: "WS", nation: "CHN", era: 2006, players: ["Xie Xingfang"],       s: { SMH: 86, SPD: 87, DEF: 86, NET: 85, STA: 85 } },
+  { disc: "WS", nation: "INA", era: 1993, players: ["Susi Susanti"],       s: { SMH: 88, SPD: 89, DEF: 88, NET: 90, STA: 88 } },
+  { disc: "WS", nation: "DEN", era: 2001, players: ["Camilla Martin"],     s: { SMH: 84, SPD: 85, DEF: 84, NET: 86, STA: 84 } },
+  { disc: "WS", nation: "CHN", era: 2013, players: ["Wang Shixian"],       s: { SMH: 85, SPD: 86, DEF: 85, NET: 82, STA: 84 } },
+  { disc: "WS", nation: "INA", era: 2023, players: ["Gregoria M. Tunjung"], s: { SMH: 85, SPD: 86, DEF: 84, NET: 82, STA: 84 } },
+  { disc: "WS", nation: "THA", era: 2021, players: ["Pornpawee Chochuwong"], s: { SMH: 82, SPD: 86, DEF: 86, NET: 84, STA: 85 } },
+  { disc: "WS", nation: "THA", era: 2019, players: ["Busanan Ongbamrungphan"], s: { SMH: 82, SPD: 84, DEF: 85, NET: 83, STA: 86 } },
+  { disc: "WS", nation: "KOR", era: 2016, players: ["Sung Ji-hyun"],       s: { SMH: 83, SPD: 86, DEF: 88, NET: 84, STA: 87 } },
+  { disc: "WS", nation: "USA", era: 2018, players: ["Beiwen Zhang"],       s: { SMH: 86, SPD: 84, DEF: 82, NET: 82, STA: 83 } },
+  { disc: "WS", nation: "CAN", era: 2019, players: ["Michelle Li"],        s: { SMH: 83, SPD: 84, DEF: 84, NET: 83, STA: 85 } },
+  { disc: "WS", nation: "SCO", era: 2016, players: ["Kirsty Gilmour"],     s: { SMH: 82, SPD: 83, DEF: 83, NET: 82, STA: 83 } },
+  { disc: "WS", nation: "DEN", era: 2019, players: ["Mia Blichfeldt"],     s: { SMH: 83, SPD: 84, DEF: 82, NET: 81, STA: 83 } },
+
+  // ---------------- MEN'S DOUBLES (more) ----------------
+  { disc: "MD", nation: "INA", era: 2022, players: ["Fajar Alfian", "Rian Ardianto"],       s: { SMH: 90, SPD: 88, DEF: 88, NET: 86, STA: 86 } },
+  { disc: "MD", nation: "INA", era: 2008, players: ["Markis Kido", "Hendra Setiawan"],      s: { SMH: 92, SPD: 86, DEF: 88, NET: 88, STA: 84 } },
+  { disc: "MD", nation: "KOR", era: 2014, players: ["Lee Yong-dae", "Yoo Yeon-seong"],      s: { SMH: 90, SPD: 89, DEF: 88, NET: 88, STA: 85 } },
+  { disc: "MD", nation: "KOR", era: 2010, players: ["Lee Yong-dae", "Jung Jae-sung"],       s: { SMH: 91, SPD: 88, DEF: 87, NET: 87, STA: 84 } },
+  { disc: "MD", nation: "CHN", era: 2018, players: ["Li Junhui", "Liu Yuchen"],             s: { SMH: 93, SPD: 84, DEF: 86, NET: 84, STA: 84 } },
+  { disc: "MD", nation: "IND", era: 2023, players: ["Satwiksairaj Rankireddy", "Chirag Shetty"], s: { SMH: 93, SPD: 87, DEF: 85, NET: 85, STA: 85 } },
+  { disc: "MD", nation: "MAS", era: 2022, players: ["Aaron Chia", "Soh Wooi Yik"],          s: { SMH: 88, SPD: 86, DEF: 88, NET: 86, STA: 86 } },
+  { disc: "MD", nation: "MAS", era: 2007, players: ["Koo Kien Keat", "Tan Boon Heong"],     s: { SMH: 92, SPD: 86, DEF: 84, NET: 84, STA: 82 } },
+  { disc: "MD", nation: "JPN", era: 2021, players: ["Takuro Hoki", "Yugo Kobayashi"],       s: { SMH: 88, SPD: 86, DEF: 88, NET: 86, STA: 85 } },
+  { disc: "MD", nation: "DEN", era: 2020, players: ["Kim Astrup", "Anders Skaarup Rasmussen"], s: { SMH: 87, SPD: 84, DEF: 88, NET: 85, STA: 85 } },
+  { disc: "MD", nation: "CHN", era: 2023, players: ["Liang Weikeng", "Wang Chang"],         s: { SMH: 90, SPD: 88, DEF: 87, NET: 87, STA: 85 } },
+
+  // ---------------- WOMEN'S DOUBLES (more) ----------------
+  { disc: "WD", nation: "CHN", era: 2004, players: ["Gao Ling", "Huang Sui"],               s: { SMH: 88, SPD: 86, DEF: 89, NET: 88, STA: 86 } },
+  { disc: "WD", nation: "CHN", era: 2006, players: ["Yang Wei", "Zhang Jiewen"],            s: { SMH: 89, SPD: 85, DEF: 88, NET: 86, STA: 85 } },
+  { disc: "WD", nation: "JPN", era: 2018, players: ["Yuki Fukushima", "Sayaka Hirota"],     s: { SMH: 88, SPD: 87, DEF: 90, NET: 88, STA: 88 } },
+  { disc: "WD", nation: "JPN", era: 2023, players: ["Nami Matsuyama", "Chiharu Shida"],     s: { SMH: 87, SPD: 88, DEF: 89, NET: 88, STA: 87 } },
+  { disc: "WD", nation: "KOR", era: 2020, players: ["Kim So-yeong", "Kong Hee-yong"],       s: { SMH: 87, SPD: 88, DEF: 88, NET: 87, STA: 86 } },
+  { disc: "WD", nation: "INA", era: 2021, players: ["Greysia Polii", "Apriyani Rahayu"],    s: { SMH: 88, SPD: 86, DEF: 86, NET: 86, STA: 85 } },
+  { disc: "WD", nation: "CHN", era: 2010, players: ["Du Jing", "Yu Yang"],                  s: { SMH: 87, SPD: 85, DEF: 88, NET: 86, STA: 85 } },
+  { disc: "WD", nation: "THA", era: 2023, players: ["Jongkolphan Kititharakul", "Rawinda Prajongjai"], s: { SMH: 85, SPD: 86, DEF: 86, NET: 85, STA: 85 } },
+  { disc: "WD", nation: "KOR", era: 2023, players: ["Baek Ha-na", "Lee So-hee"],            s: { SMH: 88, SPD: 87, DEF: 88, NET: 87, STA: 86 } },
+
+  // ---------------- MIXED DOUBLES (more) ----------------
+  { disc: "XD", nation: "CHN", era: 2000, players: ["Zhang Jun", "Gao Ling"],               s: { SMH: 88, SPD: 86, DEF: 88, NET: 90, STA: 86 } },
+  { disc: "XD", nation: "INA", era: 2007, players: ["Nova Widianto", "Liliyana Natsir"],    s: { SMH: 87, SPD: 85, DEF: 88, NET: 91, STA: 85 } },
+  { disc: "XD", nation: "CHN", era: 2019, players: ["Wang Yilyu", "Huang Dongping"],        s: { SMH: 90, SPD: 88, DEF: 89, NET: 90, STA: 87 } },
+  { disc: "XD", nation: "DEN", era: 2012, players: ["Joachim Fischer Nielsen", "Christinna Pedersen"], s: { SMH: 86, SPD: 84, DEF: 87, NET: 86, STA: 84 } },
+  { disc: "XD", nation: "MAS", era: 2016, players: ["Chan Peng Soon", "Goh Liu Ying"],      s: { SMH: 85, SPD: 84, DEF: 86, NET: 86, STA: 84 } },
+  { disc: "XD", nation: "CHN", era: 2013, players: ["Xu Chen", "Ma Jin"],                   s: { SMH: 87, SPD: 85, DEF: 86, NET: 88, STA: 85 } },
+  { disc: "XD", nation: "FRA", era: 2023, players: ["Thom Gicquel", "Delphine Delrue"],     s: { SMH: 85, SPD: 86, DEF: 86, NET: 86, STA: 85 } },
+  { disc: "XD", nation: "CHN", era: 2023, players: ["Feng Yanzhe", "Huang Dongping"],       s: { SMH: 89, SPD: 88, DEF: 88, NET: 89, STA: 87 } },
+  { disc: "XD", nation: "HKG", era: 2021, players: ["Tang Chun Man", "Tse Ying Suet"],      s: { SMH: 85, SPD: 85, DEF: 86, NET: 86, STA: 85 } },
 ];
 
-// Add Singapore flag (used by Loh Kean Yew) since it wasn't in the main map.
-NATIONS.SGP = { code: "SGP", name: "Singapore", flag: "🇸🇬" };
+// Add nations that only appear in the roster (not in the primary map above).
+NATIONS.SGP = { code: "SGP", name: "Singapore",      flag: "🇸🇬" };
+NATIONS.HKG = { code: "HKG", name: "Hong Kong",      flag: "🇭🇰" };
+NATIONS.USA = { code: "USA", name: "United States",  flag: "🇺🇸" };
+NATIONS.CAN = { code: "CAN", name: "Canada",         flag: "🇨🇦" };
+NATIONS.SCO = { code: "SCO", name: "Scotland",       flag: "🏴" };
+NATIONS.FRA = { code: "FRA", name: "France",         flag: "🇫🇷" };
 
 // Finalise the roster: assign ids and computed overalls.
 const UNITS = _UNITS.map((u, i) => ({
