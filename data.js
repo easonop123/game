@@ -58,15 +58,21 @@ const NATIONS = {
   ENG: { code: "ENG", name: "England",        flag: "🏴", kit: { primary: "#ce1124", secondary: "#ffffff" } },
 };
 
-// Helper to compute an overall from the five attributes with a
-// discipline-appropriate weighting.
-function ovrOf(disc, s) {
+// Raw stat-weighted score for a unit (used only to RANK players within a
+// discipline; the displayed overall is derived from that rank below).
+function rawScore(disc, s) {
   const w =
     disc === "MS" || disc === "WS"
       ? { SMH: 0.24, SPD: 0.24, DEF: 0.2, NET: 0.14, STA: 0.18 }
       : { SMH: 0.26, SPD: 0.18, DEF: 0.2, NET: 0.24, STA: 0.12 };
-  const raw = s.SMH * w.SMH + s.SPD * w.SPD + s.DEF * w.DEF + s.NET * w.NET + s.STA * w.STA;
-  return Math.round(raw);
+  return s.SMH * w.SMH + s.SPD * w.SPD + s.DEF * w.DEF + s.NET * w.NET + s.STA * w.STA;
+}
+
+// Deterministic per-name jitter so identical stat lines don't tie in the ranking.
+function nameSeed(name) {
+  let h = 0;
+  for (const c of name) h = (h * 31 + c.charCodeAt(0)) >>> 0;
+  return (h % 1000) / 1000;
 }
 
 // Raw unit definitions. `players` is 1 name for singles, 2 for doubles.
@@ -234,12 +240,34 @@ NATIONS.CAN = { code: "CAN", name: "Canada",         flag: "🇨🇦", kit: { pr
 NATIONS.SCO = { code: "SCO", name: "Scotland",       flag: "🏴", kit: { primary: "#005eb8", secondary: "#ffffff" } };
 NATIONS.FRA = { code: "FRA", name: "France",         flag: "🇫🇷", kit: { primary: "#0055a4", secondary: "#ef4135" } };
 
-// Finalise the roster: assign ids and computed overalls.
+// Finalise the roster: assign overalls by RANK within each discipline, mapped
+// onto a 73-96 curve. This spreads ratings far more than the raw stat lines
+// (which cluster tightly around the mid-80s) while preserving the relative
+// order set by the stats.
+const RATING_LOW = 73;
+const RATING_HIGH = 96;
+
+const _byDisc = {};
+_UNITS.forEach((u) => { (_byDisc[u.disc] = _byDisc[u.disc] || []).push(u); });
+
+const _ovrByUnit = new Map();
+Object.values(_byDisc).forEach((list) => {
+  const ranked = list
+    .map((u) => ({ u, key: rawScore(u.disc, u.s) + nameSeed(u.players.join()) * 0.01 }))
+    .sort((a, b) => a.key - b.key);
+  const N = ranked.length;
+  ranked.forEach((r, i) => {
+    const x = N === 1 ? 1 : i / (N - 1);
+    const curved = Math.pow(x, 1.25); // gentle pyramid: many mid, few elite
+    _ovrByUnit.set(r.u, Math.round(RATING_LOW + (RATING_HIGH - RATING_LOW) * curved));
+  });
+});
+
 const UNITS = _UNITS.map((u, i) => ({
   id: "u" + i,
   ...u,
-  ovr: ovrOf(u.disc, u.s),
+  ovr: _ovrByUnit.get(u),
 }));
 
 // Expose for the game module (and for quick console debugging).
-window.BADMINTON_DATA = { DISCIPLINES, FORMATS, NATIONS, UNITS, ovrOf };
+window.BADMINTON_DATA = { DISCIPLINES, FORMATS, NATIONS, UNITS, rawScore };

@@ -247,7 +247,7 @@ function draft(unit) {
 
 // Logistic win probability for a single match.
 function matchWinProb(myR, oppR) {
-  return 1 / (1 + Math.pow(10, (oppR - myR) / 12));
+  return 1 / (1 + Math.pow(10, (oppR - myR) / 13));
 }
 
 function simulateSeason() {
@@ -267,7 +267,7 @@ function simulateSeason() {
   for (let t = 0; t < SEASON_TIES; t++) {
     // Opponent field strength ramps up as the season goes on
     // (early tournaments easier, finals brutal) with some noise.
-    const base = 72 + (t / (SEASON_TIES - 1)) * 16; // 72 -> 88, ramps up all season
+    const base = 74 + (t / (SEASON_TIES - 1)) * 18; // 74 -> 92, ramps up all season
     let matchWins = 0;
 
     perDisc.forEach((pd) => {
