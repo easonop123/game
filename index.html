@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Undefeated 🏸 — Build the Perfect Badminton Squad</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="shuttle">🏸</span>
+      <h1>UNDEFEATED</h1>
+      <span class="tag">Build the perfect badminton squad</span>
+    </div>
+    <button id="resetBtn" class="ghost-btn" title="Start over">↺ Restart</button>
+  </header>
+
+  <main class="stage">
+
+    <!-- STEP 1: FORMAT -->
+    <section id="screen-format" class="screen active">
+      <h2 class="step-title"><span>1</span> Choose your team format</h2>
+      <div id="formatGrid" class="format-grid"></div>
+    </section>
+
+    <!-- STEP 2: DRAFT -->
+    <section id="screen-draft" class="screen">
+      <div class="draft-layout">
+
+        <!-- Court with slots -->
+        <div class="court-wrap">
+          <div class="court">
+            <div class="court-line net"></div>
+            <div class="court-line service-top"></div>
+            <div class="court-line service-bottom"></div>
+            <div class="court-line centre"></div>
+            <div id="slots" class="slots"></div>
+          </div>
+          <div class="team-meta">
+            <div class="team-rating">
+              <span class="label">TEAM RATING</span>
+              <span id="teamOvr" class="value">--</span>
+            </div>
+            <div class="team-progress">
+              <span id="draftProgress">0 / 5 drafted</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spin + pick panel -->
+        <aside class="draft-panel">
+          <div class="spin-box">
+            <div id="spinDisplay" class="spin-display">
+              <div class="spin-flag" id="spinFlag">🎰</div>
+              <div class="spin-nation" id="spinNation">Spin for a nation</div>
+              <div class="spin-era" id="spinEra">& era</div>
+            </div>
+            <button id="spinBtn" class="primary-btn spin-btn">🎡 SPIN</button>
+          </div>
+
+          <div id="pickList" class="pick-list">
+            <p class="pick-hint">Spin the wheel to draw a nation, then draft one
+              unit for an open discipline.</p>
+          </div>
+
+          <button id="simulateBtn" class="primary-btn sim-btn" disabled>
+            ▶ Simulate the season
+          </button>
+        </aside>
+      </div>
+    </section>
+
+    <!-- STEP 3: RESULT -->
+    <section id="screen-result" class="screen">
+      <div id="resultCard" class="result-card">
+        <div class="result-verdict" id="resultVerdict">--</div>
+        <div class="result-record" id="resultRecord">0 – 0</div>
+        <div class="result-sub" id="resultSub"></div>
+        <div class="result-breakdown" id="resultBreakdown"></div>
+        <div class="result-actions">
+          <button id="shareBtn" class="ghost-btn">📋 Copy result</button>
+          <button id="againBtn" class="primary-btn">Build another</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="foot">
+    Inspired by the 38-0-0 football draft game · Fan-made · Ratings are for fun only
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
